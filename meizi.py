@@ -17,7 +17,7 @@ while url:
         large_image_url = image_pat.sub('/large/', image_url)
         ir = requests.get("http:" + large_image_url)
         if ir.status_code == 200:
-            open(image.split("/")[-1], 'wb').write(ir.content)
+            open(image_url.split("/")[-1], 'wb').write(ir.content)
 
     next_page_button = soup.find('a', {'class': 'previous-comment-page'})
 
